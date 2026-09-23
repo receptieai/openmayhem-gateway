@@ -16,7 +16,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 WORKDIR /app
 RUN git clone https://github.com/Trac-Systems/openmayhem.git .
 RUN ./install.sh --from-source
-export PATH="/root/.mayhem/bin:/root/.mayhem/node/bin:$PATH"
+ENV PATH="/root/.mayhem/bin:/root/.mayhem/node/bin:${PATH}"
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
